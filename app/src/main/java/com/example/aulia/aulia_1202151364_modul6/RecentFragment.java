@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+//untuk menampilkan fragment photo yang telah diupload, berhubungan dengan Popular tab
 public class RecentFragment extends Fragment {
     RecyclerView recentRecycler;
     PopularAdapter adapter;

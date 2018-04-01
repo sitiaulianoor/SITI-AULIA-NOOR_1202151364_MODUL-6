@@ -45,7 +45,7 @@ public class PostPictActivity extends AppCompatActivity {
     // dari firebase
     String userEmail;
 
-    // yang bakal dikirim
+    // variabel yang akan dikirim ke dalam database
     String username, title, desc;
 
     @Override
@@ -95,10 +95,10 @@ public class PostPictActivity extends AppCompatActivity {
             title = postTitle.getText().toString();
             desc = postDesc.getText().toString();
 
-            // database
+            // Inisialisasi database
             final DatabaseReference database = FirebaseDatabase.getInstance().getReference("posts");
 
-            // storage
+            // melakukan penyimpanan kedalam storage
             StorageReference riversRef = storageReference.child("image").child(filePath.getLastPathSegment());
             riversRef.putFile(filePath)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {

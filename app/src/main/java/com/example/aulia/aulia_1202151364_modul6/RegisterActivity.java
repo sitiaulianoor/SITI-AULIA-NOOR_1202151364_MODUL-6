@@ -46,15 +46,15 @@ public class RegisterActivity extends AppCompatActivity {
         String email = registerEmail.getText().toString();
         String password = registerPassword.getText().toString();
 
-        // checking fields
+        // memeriksa jika field email dan password kosong
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(),
-                    "Your email is still empty!", Toast.LENGTH_SHORT).show();
+                    "Your email is empty!", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
             Toast.makeText(getApplicationContext(),
-                    "Your password is still empty!", Toast.LENGTH_SHORT).show();
+                    "Your password is empty!", Toast.LENGTH_SHORT).show();
             return;
         }
         if (password.length() < 6) {

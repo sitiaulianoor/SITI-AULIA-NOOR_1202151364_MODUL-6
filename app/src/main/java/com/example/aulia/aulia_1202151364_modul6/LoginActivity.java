@@ -60,21 +60,23 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+
+    //Verifikasi login username dan password jika kosong
     private void loginFirebase() {
         String email = loginEmail.getText().toString();
         final String password = loginPassword.getText().toString();
 
         // checking fields
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Your email is still empty",
+            Toast.makeText(getApplicationContext(), "Your email is empty",
                     Toast.LENGTH_SHORT).show();
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Your password is still empty",
+            Toast.makeText(getApplicationContext(), "Your password is empty",
                     Toast.LENGTH_SHORT).show();
         }
 
-        // login user
+        // Verifikasi login jika password < 6 karakter
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override

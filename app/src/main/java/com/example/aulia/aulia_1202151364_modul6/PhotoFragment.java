@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
+//untuk menampilkan fragment MyPhoto
 public class PhotoFragment extends Fragment {
     public PhotoFragment() {}
 
