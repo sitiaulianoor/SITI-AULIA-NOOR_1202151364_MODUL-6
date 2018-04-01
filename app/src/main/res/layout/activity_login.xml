@@ -39,7 +39,7 @@
         android:layout_below="@+id/edEmail"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName" />
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/bMasuk"

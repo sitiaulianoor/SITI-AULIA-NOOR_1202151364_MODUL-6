@@ -38,7 +38,7 @@
         android:layout_below="@+id/rEmail"
         android:layout_marginTop="29dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:hint="Password" />
 
     <Button
