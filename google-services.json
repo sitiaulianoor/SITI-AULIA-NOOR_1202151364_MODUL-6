@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "346524353665",
+    "firebase_url": "https://popotoan-7f65b.firebaseio.com",
+    "project_id": "popotoan-7f65b",
+    "storage_bucket": "popotoan-7f65b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346524353665:android:56e450bd6079a096",
+        "android_client_info": {
+          "package_name": "com.example.aulia.aulia_1202151364_modul6"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346524353665-1nf60642net0t5ni7rqri3k3drl956f0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATk8By-FyolA6kwA4lBBWuTw1Kq54F4y8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
