@@ -22,8 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth auth;
 
     EditText loginEmail, loginPassword;
-    Button btnLogin;
-    TextView linkSignUp;
+    Button btnLogin, btnDaftar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +40,11 @@ public class LoginActivity extends AppCompatActivity {
 
         loginEmail = findViewById(R.id.edEmail);
         loginPassword = findViewById(R.id.edPass);
-        linkSignUp = findViewById(R.id.bDaftar);
+        btnDaftar = findViewById(R.id.bDaftar);
         btnLogin = findViewById(R.id.bMasuk);
 
         // to sign up activity
-        linkSignUp.setOnClickListener(new View.OnClickListener() {
+        btnDaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);

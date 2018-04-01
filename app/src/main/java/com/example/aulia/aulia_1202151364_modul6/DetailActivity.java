@@ -38,7 +38,7 @@ public class DetailActivity extends AppCompatActivity {
     String message = "";
 
     FirebaseUser user;
-    // dari firebase
+    // get username dari firebase
     String userEmail;
 
     @Override
