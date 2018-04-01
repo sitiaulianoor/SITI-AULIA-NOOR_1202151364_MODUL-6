@@ -4,29 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="10dp"
     tools:context="com.example.aulia.aulia_1202151364_modul6.LoginActivity">
 
 
     <TextView
-        android:padding="16dp"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="32dp"
+        android:layout_alignEnd="@+id/edPass"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:id="@+id/textView" />
+        android:padding="16dp"
+        android:text="Login"
+        android:textSize="28dp" />
 
     <EditText
         android:id="@+id/edEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/edPass"
         android:layout_below="@+id/textView"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="43dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Email" />
+        android:hint="Email"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/edPass"
@@ -34,28 +37,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/edEmail"
-        android:layout_marginTop="11dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Password" />
+        android:hint="Password"
+        android:inputType="textPersonName" />
 
-        <Button
-            android:id="@+id/bMasuk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/bDaftar"
-            android:layout_alignBottom="@+id/bDaftar"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="241dp"
-            android:text="MASUK" />
+    <Button
+        android:id="@+id/bMasuk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edPass"
+        android:layout_below="@+id/edPass"
+        android:layout_marginTop="41dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="#ffffff"
+        android:text="MASUK" />
 
-         <Button
-            android:id="@+id/bDaftar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/edPass"
-            android:layout_marginEnd="241dp"
-            android:layout_marginTop="61dp"
-            android:text="DAFTAR" />
+    <Button
+        android:id="@+id/bDaftar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bMasuk"
+        android:layout_below="@+id/bMasuk"
+        android:layout_marginTop="14dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="#ffffff"
+        android:text="DAFTAR" />
 </RelativeLayout>

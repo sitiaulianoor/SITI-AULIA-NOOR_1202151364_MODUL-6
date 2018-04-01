@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.aulia.aulia_1202151364_modul6.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -17,54 +18,78 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText registEmail, registPass;
-    Button btnRegist;
+    EditText registerEmail, registerPassword;
+    Button btnRegister;
 
-    FirebaseAuth auth;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        registEmail = findViewById(R.id.rEmail);
-        registPass = findViewById(R.id.rPass);
-        btnRegist = findViewById(R.id.bDaftar);
         auth = FirebaseAuth.getInstance();
 
-        btnRegist.setOnClickListener(new View.OnClickListener() {
+        registerEmail = findViewById(R.id.rEmail);
+        registerPassword = findViewById(R.id.rPass);
+        btnRegister = findViewById(R.id.bDaftar);
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 registerFirebase();
-
-
             }
         });
     }
 
     private void registerFirebase() {
-        String email = registEmail.getText().toString();
-        String pass = registPass.getText().toString();
+        String email = registerEmail.getText().toString();
+        String password = registerPassword.getText().toString();
 
+        // checking fields
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Email masih kosong!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),
+                    "Your email is still empty!", Toast.LENGTH_SHORT).show();
+            return;
         }
-        if (TextUtils.isEmpty(pass)) {
-            Toast.makeText(this, "Password masih kosong!", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(),
+                    "Your password is still empty!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (password.length() < 6) {
+            Toast.makeText(getApplicationContext(),
+                    "Your password is short!", Toast.LENGTH_SHORT).show();
+            return;
         }
 
-        auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+        // create user
+        auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Toast.makeText(RegisterActivity.this,
+                                "Success create user" + task.isSuccessful(),
+                                Toast.LENGTH_SHORT).show();
 
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (!task.isSuccessful()){
-                    Toast.makeText(RegisterActivity.this, "Gagal register", Toast.LENGTH_LONG).show();
-                }else{
-                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        });
+                        // if register user is not success
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(RegisterActivity.this,
+                                    "Authentication failed." + task.getException(),
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        // if register success
+                        else {
+                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

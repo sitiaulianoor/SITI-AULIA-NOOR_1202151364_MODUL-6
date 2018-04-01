@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "346524353665-t8jhjqhin9ctq6qf6f1tbq1fqm2ktcqs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aulia.aulia_1202151364_modul6",
+            "certificate_hash": "62b9e3676a9e8b757e5096a3eb066b9313035521"
+          }
+        },
+        {
           "client_id": "346524353665-1nf60642net0t5ni7rqri3k3drl956f0.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346524353665-1nf60642net0t5ni7rqri3k3drl956f0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
